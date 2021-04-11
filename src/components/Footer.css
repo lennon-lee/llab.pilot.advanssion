@@ -1,9 +1,12 @@
 footer {
   margin-top: 60px;
-  height: 343px;
   background-color: #2B2835;
 }
 .footer-link {
+  text-align: center;
+  height: 343px;  
+}
+.mobile-footer-link {
   text-align: center;
 }
 .footer-link-logo {
@@ -38,8 +41,6 @@ footer {
   text-align: center;
   position: relative;
   top: 55px;
-}
-.footer-bottom p {
   color: #FFFFFF;
   font-size: 12px;
   font-weight: 500;

@@ -4,10 +4,15 @@ import { Link } from 'react-router-dom';
 import './Footer.css';
 import Logo from '../assets/logo.png';
 
-const Footer = () => {
+const Footer = ({ isPC }) => {
+  let footerLink = "footer-link";
+
+  if (!isPC) {
+    footerLink = "mobile-footer-link";
+  }
   return (
     <footer>
-      <div className="footer-link">
+      <div className={ footerLink }>
         <div className="footer-link-logo">
           <Link to="/">
             <img
@@ -59,9 +64,9 @@ const Footer = () => {
             <Link to="/">No Icon</Link>            
           </div>
         </div>        
-      </div>
-      <div className="footer-bottom">
-        <p>Copyright © 2020 Apple Inc. - All rights reserved.</p>
+        <div className="footer-bottom">
+          Copyright © 2020 Apple Inc. - All rights reserved.
+        </div>
       </div>
     </footer>
   )
