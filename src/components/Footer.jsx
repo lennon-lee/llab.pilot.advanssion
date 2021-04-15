@@ -6,14 +6,22 @@ import Logo from '../assets/logo.png';
 
 const Footer = ({ isPC }) => {
   let footerLink = "footer-link";
+  let footerLinkLogo = "footer-link-logo";
+  let footerLinkCommon = "footer-link-common";
+  let footerLinkCommonTitle = "footer-link-common-title";
+  let footerBottom = "footer-bottom";
 
   if (!isPC) {
     footerLink = "mobile-footer-link";
+    footerLinkLogo = "mobile-footer-link-logo";
+    footerLinkCommon = "mobile-footer-link-common";
+    footerLinkCommonTitle = "mobile-footer-link-common-title";
+    footerBottom = "mobile-footer-bottom";
   }
   return (
     <footer>
       <div className={ footerLink }>
-        <div className="footer-link-logo">
+        <div className={ footerLinkLogo }>
           <Link to="/">
             <img
               style={{ width: `49.87px`, height: `49.87px` }}
@@ -22,9 +30,9 @@ const Footer = ({ isPC }) => {
             />
           </Link>
         </div>
-        <div className="footer-link-common">
+        <div className={ footerLinkCommon }>
           <div className="footer-link-common-type">Products</div>
-          <div className="footer-link-common-title">
+          <div className={`focus ${footerLinkCommonTitle}`}>
             <Link to="/">HEADPHONES</Link>
             <Link to="/">EARPHONES</Link>
             <Link to="/">SPEAKERS</Link>
@@ -33,10 +41,13 @@ const Footer = ({ isPC }) => {
             <Link to="/">BEATSAUDIO</Link>
             <Link to="/">SPECIAL OFFERS</Link>
           </div>
-        </div>
-        <div className="footer-link-common">
+        </div>        
+
+        { !isPC && <div className="footer-line"></div> }
+
+        <div className={ footerLinkCommon }>
           <div className="footer-link-common-type">Support</div>
-          <div className="footer-link-common-title">          
+          <div className={ footerLinkCommonTitle }>
             <Link to="/">PRODUCT HELP</Link>
             <Link to="/">SERVICE & WARRANTY</Link>
             <Link to="/">REGISTER YOUR BEATS</Link>
@@ -46,9 +57,12 @@ const Footer = ({ isPC }) => {
             <Link to="/">INTERNATIONAL NUMBERS</Link>
           </div>
         </div>
-        <div className="footer-link-common">
+
+        { !isPC && <div className="footer-line"></div> }
+
+        <div className={ footerLinkCommon }>
           <div className="footer-link-common-type">Company</div>
-          <div className="footer-link-common-title">          
+          <div className={ footerLinkCommonTitle }>
             <Link to="/">PRODUCT HELP</Link>
             <Link to="/">NEWS AND EVENTS</Link>
             <Link to="/">PROMOTION TERMS</Link>
@@ -58,13 +72,16 @@ const Footer = ({ isPC }) => {
             <Link to="/">COOKIES</Link>
           </div>
         </div>
-        <div className="footer-link-common">
+
+        { !isPC && <div className="footer-line"></div> }
+
+        <div className={ footerLinkCommon }>
           <div className="footer-link-common-type">Follow Us</div>
-          <div className="footer-link-common-title">
+          <div className={ footerLinkCommonTitle }>
             <Link to="/">No Icon</Link>            
           </div>
         </div>        
-        <div className="footer-bottom">
+        <div className={ footerBottom }>
           Copyright © 2020 Apple Inc. - All rights reserved.
         </div>
       </div>

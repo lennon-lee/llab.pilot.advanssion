@@ -2,12 +2,20 @@ footer {
   margin-top: 60px;
   background-color: #2B2835;
 }
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(0 0 0 / 39%);
+}
+
 .footer-link {
   text-align: center;
   height: 343px;  
 }
 .mobile-footer-link {
   text-align: center;
+  padding-bottom: 40px;
 }
 .footer-link-logo {
   display: inline-table;
@@ -15,11 +23,21 @@ footer {
   vertical-align: top;
   margin-top: 50px;
 }
+.mobile-footer-link-logo {
+  padding-top: 35px;
+}
 .footer-link-common {
   display: inline-table;
   margin-top: 55px;
   margin-left: 50px;
   margin-right: 50px;
+  text-align: left;
+}
+.mobile-footer-link-common {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
   text-align: left;
 }
 .footer-link-common-type {
@@ -37,6 +55,17 @@ footer {
   line-height: 22px;;
   text-decoration: none;
 }
+.mobile-footer-link-common-title.focus a {
+  display: block;
+}
+.mobile-footer-link-common-title a {
+  display: none;
+  color: #B8B8B8;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 22px;;
+  text-decoration: none;
+}
 .footer-bottom {
   text-align: center;
   position: relative;
@@ -45,4 +74,7 @@ footer {
   font-size: 12px;
   font-weight: 500;
   opacity: 31%;
+}
+.mobile-footer-bottom {
+  display: none;
 }
