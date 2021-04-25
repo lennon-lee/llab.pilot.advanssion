@@ -1,12 +1,10 @@
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import axios from "axios";
+
 import './Main.css';
 import Studio3wireless from '../../assets/studio3wireless.png';
 import Pill from '../../assets/pill.png';
-import Product0 from '../../assets/product0.png';
-import Product1 from '../../assets/product1.png';
-import Product2 from '../../assets/product2.png';
-import Product3 from '../../assets/product3.png';
-import Product4 from '../../assets/product4.png';
-import Product5 from '../../assets/product5.png';
 import Product  from '../../components/ui/Product';
 
 const Main = ({ isPC }) => {
@@ -77,6 +75,17 @@ const Main = ({ isPC }) => {
         />
     </div>
   );
+
+  /** Products */
+  const [products, setProducts] = useState([]); 
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const response = await axios.get('mock_data/products.json');
+      setProducts(response.data);
+    }
+    fetchArticles();
+  }, []);
+
   return (
     <div>
       <section className={ firstStyle }>
@@ -120,12 +129,17 @@ const Main = ({ isPC }) => {
         { isPC && mainSecondProduct}
       </section>
       <section className={ mainListStyle }>
-        <Product src={ Product0 } width={ 263 } height={ 356 } price={ 299.95 } />
-        <Product src={ Product1 } width={ 319 } height={ 280 } price={ 199.95 } />
-        <Product src={ Product2 } width={ 282 } height={ 306 } price={ 199.95 } />
-        <Product src={ Product3 } width={ 229 } height={ 481 } price={ 999.95 } />
-        <Product src={ Product4 } width={ 298 } height={ 425 } price={ 99.95 } />
-        <Product src={ Product5 } width={ 231 } height={ 424 } price={ 299.95 } />
+        { products.map(product => (          
+          <Product
+            key={ product.id }
+            src={ product.path }
+            width={ product.width }
+            height={ product.height }
+            type={ product.type }
+            desc={ product.desc }
+            price={ product.price }
+          />
+        )) }
       </section>
       <section className="sign-up">
         <div className="sign-up-form">

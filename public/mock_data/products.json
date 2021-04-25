@@ -1,0 +1,56 @@
+[
+	{
+		"id": 1,
+		"type": "Beatsˣ",
+		"path": "images/product0.png",
+		"desc": "Up to 8 hours of battery life With Fast Fuel, a 5-minute charge = 2 hours of playback",
+		"price": 299.95,
+		"width": 263,
+		"height": 356
+	},
+	{
+		"id": 2,
+		"type": "Beatsˣ",
+		"path": "images/product1.png",
+		"desc": "Up to 8 hours of battery life With Fast Fuel, a 5-minute charge = 2 hours of playback",
+		"price": 199.95,
+		"width": 319,
+		"height": 280
+	},
+	{
+		"id": 3,
+		"type": "Beatsˣ",
+		"path": "images/product2.png",
+		"desc": "Up to 8 hours of battery life With Fast Fuel, a 5-minute charge = 2 hours of playback",
+		"price": 199.95,
+		"width": 282,
+		"height": 306
+	},
+	{
+		"id": 4,
+		"type": "Beatsˣ",
+		"path": "images/product3.png",
+		"desc": "Up to 8 hours of battery life With Fast Fuel, a 5-minute charge = 2 hours of playback",
+		"price": 999.95,
+		"width": 229,
+		"height": 481
+	},
+	{
+		"id": 5,
+		"type": "Beatsˣ",
+		"path": "images/product4.png",
+		"desc": "Up to 8 hours of battery life With Fast Fuel, a 5-minute charge = 2 hours of playback",
+		"price": 99.95,
+		"width": 298,
+		"height": 425
+	},
+	{
+		"id": 6,
+		"type": "Beatsˣ",
+		"path": "images/product5.png",
+		"desc": "Up to 8 hours of battery life With Fast Fuel, a 5-minute charge = 2 hours of playback",
+		"price": 299.95,
+		"width": 231,
+		"height": 424
+	}
+]
