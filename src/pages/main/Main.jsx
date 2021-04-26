@@ -3,8 +3,6 @@ import { useState } from 'react';
 import axios from "axios";
 
 import './Main.css';
-import Studio3wireless from '../../assets/studio3wireless.png';
-import Pill from '../../assets/pill.png';
 import Product  from '../../components/ui/Product';
 
 const Main = ({ isPC }) => {
@@ -66,25 +64,32 @@ const Main = ({ isPC }) => {
     mainListStyle = "mobile-main-list";
   }
 
+  /** Banner, Products */
+  const [mainBanner, setMainBanner] = useState([]);
+  const [subBanner, setSubBanner] = useState([]);
+  const [products, setProducts] = useState([]); 
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const mainBannerResult = await axios.get('mock_data/mainBanner.json');
+      const subBannerResult = await axios.get('mock_data/subBanner.json')
+      const productsResult = await axios.get('mock_data/products.json');
+      
+      setMainBanner(mainBannerResult.data);
+      setSubBanner(subBannerResult.data);
+      setProducts(productsResult.data);
+    }
+    fetchArticles();
+  }, []);
+
   const mainSecondProduct = (
     <div className={ secondProductStyle }>
       <img
           style={{ width: secondProductImageSize}}
-          src={ Pill }
+          src={ subBanner.path }
           alt="pill"
         />
     </div>
   );
-
-  /** Products */
-  const [products, setProducts] = useState([]); 
-  useEffect(() => {
-    const fetchArticles = async () => {
-      const response = await axios.get('mock_data/products.json');
-      setProducts(response.data);
-    }
-    fetchArticles();
-  }, []);
 
   return (
     <div>
@@ -93,26 +98,26 @@ const Main = ({ isPC }) => {
           <div className={ firstProductStyle }>
             <img
               style={{ maxWidth: firstProductImageSize }}
-              src={ Studio3wireless }
+              src={ mainBanner.path }
               alt="studio3wireless"            
             />
           </div>
           <div className={ firstContentsStyle }>
-            <div className={ firstContentsTypeStyle }>Beats Studio3 Wireless</div>
-            <div className={ firstContentsTitleStyle }>Experience your music like never before.</div>
+            <div className={ firstContentsTypeStyle }>{ mainBanner.type }</div>
+            <div className={ firstContentsTitleStyle }>{ mainBanner.title }</div>
             <div className={ firstContentsBuyStyle }>
-              <div className={ firstContentsBuyPriceStyle }>$299.95</div>
+              <div className={ firstContentsBuyPriceStyle }>${ mainBanner.price }</div>
               <div className={ firstContentsBuyButtonStyle }>BUY NOW</div>
             </div>
-            <div className={ firstContentsDescStyle }>$60 Apple Music gift card with purchase of select Beats products.*</div>
+            <div className={ firstContentsDescStyle }>{ mainBanner.desc }</div>
           </div>
         </div>
       </section>
       <section className={ secondStyle }>
         { !isPC && mainSecondProduct}
         <div className={ secondContentsStyle }>
-          <div className={ secondContentsTypeStyle }>Portable Wireless Speaker</div>
-          <div className={ secondContentsTitleStyle }>Beats Pill</div>
+          <div className={ secondContentsTypeStyle }>{ subBanner.type }</div>
+          <div className={ secondContentsTitleStyle }> { subBanner.title } </div>
           <div className={ secondContentsColorTitleStyle }>Available Colors</div>
           <div className={ secondContentsColorSubtitleStyle }>Find your Color</div>
           <div className={ secondContentsColorBalloptionStyle }>
@@ -121,10 +126,10 @@ const Main = ({ isPC }) => {
             <div className="blackball"></div>
           </div>
           <div className={ secondContentsBuyStyle }>
-            <div className={ secondContentsBuyPriceStyle }>$299.95</div>
+            <div className={ secondContentsBuyPriceStyle }>${ subBanner.price }</div>
             <div className={ secondContentsBuyButtonStyle }>BUY NOW</div>
           </div>
-          <div className={ secondContentsDescStyle }>$60 Apple Music gift card with purchase of select Beats products.*</div>
+          <div className={ secondContentsDescStyle }>{ subBanner.desc }</div>
         </div>
         { isPC && mainSecondProduct}
       </section>
