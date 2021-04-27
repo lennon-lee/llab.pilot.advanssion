@@ -143,6 +143,7 @@ const Main = ({ isPC }) => {
         { products.map(product => (          
           <Product
             key={ product.id }
+            isPC= { isPC }
             src={ product.path }
             width={ product.width }
             height={ product.height }
