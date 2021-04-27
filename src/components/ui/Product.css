@@ -1,6 +1,8 @@
 .product {
 	display: inline-block;
-	width: 393px;
+	width: 30%;
+	min-width: 333px;
+	max-width: 393px;
 	height: 560px;
 	text-align: left;
 	background-color: #F8F8F9;
@@ -11,8 +13,11 @@
 }
 .product-cover {
 	position: absolute;
+	width: inherit;
 	text-align: center;
-	margin-left: 60px;
+	width: 30%;
+	min-width: 333px;
+	max-width: 393px;
 }
 .product-wrap {
 	position: absolute;
@@ -41,12 +46,13 @@
 	color: #9D8220;
 	font-size: 25px;
 	font-weight: 600;
+	vertical-align: middle;
 	display: inline-block;
 }
 .product-buy-button {
 	display: inline-block;
 	margin-left: 30px;
-	width: 170px;
+	width: 150px;
 	height: 41px;
 	background-color: #000000;
 	color: #FFFFFF;

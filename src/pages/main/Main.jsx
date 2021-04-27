@@ -34,6 +34,9 @@ const Main = ({ isPC }) => {
 
   let mainListStyle = "main-list";
 
+  let signUpFormEmailStyle = "sign-up-form-email";
+  let signUpFormButtonStyle = "sign-up-form-button";
+
   if (!isPC) {
     firstStyle = "mobile-main-first";
     firstWrapStyle = "mobile-main-first-wrap";
@@ -45,7 +48,7 @@ const Main = ({ isPC }) => {
     firstContentsBuyPriceStyle = "mobile-main-first-contents-buy-price";
     firstContentsBuyButtonStyle = "mobile-main-first-contents-buy-button";
     firstContentsDescStyle = "mobile-main-first-contents-desc";
-    firstProductImageSize = "424px";
+    firstProductImageSize = "100%";
 
     secondStyle = "mobile-main-second";
     secondProductStyle = "";
@@ -62,6 +65,9 @@ const Main = ({ isPC }) => {
     secondProductImageSize = "348px";
 
     mainListStyle = "mobile-main-list";
+
+    signUpFormEmailStyle = "mobile-sign-up-form-email";
+    signUpFormButtonStyle = "mobile-sign-up-form-button";
   }
 
   /** Banner, Products */
@@ -152,11 +158,11 @@ const Main = ({ isPC }) => {
           <div className="sign-up-form-desc">Get updates on product drops, collaborations and all things Beats.</div>
           <input
             placeholder={`Enter your email`}
-            className="sign-up-form-email"
+            className={ signUpFormEmailStyle }
             type="email"
             name="email"
           />
-          <div className="sign-up-form-button">Sign up</div>
+          <div className={ signUpFormButtonStyle }>Sign up</div>
         </div>
       </section>
     </div>
